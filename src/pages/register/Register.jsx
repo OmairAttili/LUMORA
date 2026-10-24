@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { alpha, Box, Container, Typography,Button, Divider,InputAdornment, Checkbox,OutlinedInput ,Link, Alert, CircularProgress } from '@mui/material';
+import { alpha, Box, Container, Typography,Button, Divider,InputAdornment, Checkbox,OutlinedInput ,Link, Alert } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import DevicesIcon from '@mui/icons-material/Devices';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -51,7 +51,7 @@ function Register() {
       setSuccess(true);
       navigate('/Login')
     }catch(err){
-      setServerError(err.response);
+      setServerError("Registration fail");
     }
   }
   return <Box sx={{backgroundColor:'#FCF8FF', fontFamily:'Inter'}}>
