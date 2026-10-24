@@ -45,7 +45,7 @@ function Register() {
   const navigate = useNavigate();
   const [success,setSuccess]=useState(false);
   const [serverError,setServerError]=useState(null);
-  const onSubmit = async()=>{
+  const onSubmit = async(data)=>{
     try{
       const response = await axios.post(`https://knowledgeshop.runasp.net/api/auth/Account/Register`,data);
       setSuccess(true);

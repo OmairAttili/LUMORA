@@ -26,10 +26,6 @@ const router = createBrowserRouter([
           element:<ForgetPassword/>
         },
         {
-          path:"Send Code",
-          element:<SendCode/>
-        },
-        {
           path:"Cart",
           element:<Cart/>
         },
@@ -61,6 +57,10 @@ const router = createBrowserRouter([
         {
           path:"Login",
           element:<Login/>
+        },
+        {
+          path:"SendCode",
+          element:<SendCode/>
         },
     ]
   }

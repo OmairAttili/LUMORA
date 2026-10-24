@@ -29,11 +29,11 @@ function Login() {
   const navigate = useNavigate();
   const [success,setSuccess]=useState(false);
   const [serverError,setServerError]=useState(null);
-  const onSubmit = async()=>{
+  const onSubmit = async(data)=>{
     try{
       const response = await axios.post(`https://knowledgeshop.runasp.net/api/auth/Account/Login`,data);
       setSuccess(true);
-      navigate('/Home')
+      navigate('/')
     }catch(err){
       setServerError("Login fail");
     }
@@ -109,7 +109,7 @@ function Login() {
               <Checkbox defaultChecked={false} size="small" color='#767676'/>
               <Typography variant='p'component={"p"} sx={{color:'#464552',fontSize:13,letterSpacing:0.13}}>Remember this device for 30 days</Typography>
             </Box>
-            <Link href='ForgetPassword' sx={{textDecoration:'none',color:'#FC6955',fontSize:12,fontWeight:600,letterSpacing:0.24}}>Forget password?</Link>
+            <Link href='SendCode' sx={{textDecoration:'none',color:'#FC6955',fontSize:12,fontWeight:600,letterSpacing:0.24}}>Forget password?</Link>
             </Box>
             <Button type='submit' variant="contained" disabled={isSubmitting} sx={{marginBottom:3,backgroundColor:'#272387',width:'100%',py:1.75,px:3,borderRadius:4,fontSize:16,fontWeight:700,color:'white'}}>
               <Box sx={{display:'flex',alignItems:'center',gap:1}}>
