@@ -4,6 +4,7 @@ import { Alert, Box, Card, CardActionArea, CardContent, CardMedia, CircularProgr
 import { Link, useParams } from 'react-router-dom';
 
 function Products() {
+  const {id} = useParams();
   const {data,isLoading,isError} = useProduct();
   if(isLoading) return <CircularProgress/>
   if(isError)
@@ -11,7 +12,7 @@ function Products() {
   console.log(data);
   return <Box sx={{display:'grid',gap:2,gridTemplateColumns:{xs:'repeat(2,1fr)',sm:'repeat(3,1fr)',md:'repeat(4,1fr)'},alignContent:'center',justifyContent:'center',justifyItems:'center'}}>
   {data.map((product)=>(
-    <Card component={Link}>
+    <Card component={Link} to={`Products/${id}`}>
       <CardActionArea>
       <CardMedia component={'img'} image={product.image} alt={product.name}>
       </CardMedia>
