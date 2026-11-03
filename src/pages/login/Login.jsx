@@ -5,12 +5,14 @@ import Google from '../../assets/images/Google.png'
 import Apple from '../../assets/images/Apple.svg'
 import DevicesIcon from '@mui/icons-material/Devices';
 import LoginForm from './LoginForm';
+import LeftSide from './LeftSide';
 
 
 function Login() {
 
   return <Box sx={{backgroundColor:'#FCF8FF', fontFamily:'Inter'}}>
-    <Container sx={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+    <Container sx={{display:'flex',alignItems:'center',justifyContent:'center',gap:4}}>
+      <LeftSide/>
         <Box sx={{width:{lg:'50%',xs:'100%'},marginTop:3,backgroundColor:alpha('#FFFFFF',0.2),boxShadow:3,py:5,px:{xs:2,sm:5},borderRadius:2}}>
           <Box sx={{marginBottom:3}}>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
