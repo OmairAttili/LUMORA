@@ -12,6 +12,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from "@hookform/resolvers/yup"
 import registerSchema from '../../schemas/Schema';
+import { motion, scale } from 'motion/react';
 function Form() {
      const {register,handleSubmit,formState:{errors,isSubmitting}} = useForm({
     resolver:yupResolver(registerSchema),mode:'onBlur'
@@ -102,7 +103,7 @@ function Form() {
               <Checkbox defaultChecked={false} size="small" color='#767676'/>
               <Typography variant='p'component={"p"} sx={{color:'#6E6D7A',fontSize:13,letterSpacing:0.13}}>I agree to LUMORA's <Link href='#' sx={{color:'#272387',fontWeight:500,textDecoration:'none'}}>Terms of Service</Link> and <Link href={'#'} sx={{color:'#272387',fontWeight:500,textDecoration:'none'}}>Privacy Policy </Link>, including device telemetry optimization.</Typography>
             </Box>
-            <Button type='submit' variant="contained" disabled={isSubmitting} sx={{marginBottom:3,backgroundColor:'#272387',width:'100%',py:1.75,px:3,borderRadius:4,fontSize:16,fontWeight:700,color:'white'}}>
+            <Button component={motion.button} type='submit' variant="contained" disabled={isSubmitting} sx={{marginBottom:3,backgroundColor:'#272387',width:'100%',py:1.75,px:3,borderRadius:4,fontSize:16,fontWeight:700,color:'white'}} whileHover={{y:-5,scale:1.05}} transition={{duration:0.5}}>
               <Box sx={{display:'flex',alignItems:'center',gap:1}}>
               <Typography component={'h2'} sx={{textTransform:'capitalize'}}>Create Account</Typography>
               <ArrowForwardIcon sx={{size:12}}/>

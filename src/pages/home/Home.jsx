@@ -1,7 +1,6 @@
 import React from 'react'
-import { Box, Container, Alert, CircularProgress, Chip } from '@mui/material';
+import { Box, Container, Alert, CircularProgress, Chip, Button, duration } from '@mui/material';
 import { useCategory } from '../../hooks/UseCategory';
-
 function Home() {
   const {data,isLoading,isError} = useCategory()
   console.log(data)

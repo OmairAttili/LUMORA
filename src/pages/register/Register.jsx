@@ -1,5 +1,5 @@
 import React from 'react'
-import { alpha, Box, Container, Typography,Button, Divider } from '@mui/material';
+import { alpha, Box, Container, Typography,Button, Divider, duration } from '@mui/material';
 import CircleIcon from '@mui/icons-material/Circle';
 import DevicesIcon from '@mui/icons-material/Devices';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -15,12 +15,14 @@ import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import Form from '../../components/form/Form'
+import { motion } from "motion/react"
 
 function Register() {
 
   return <Box sx={{backgroundColor:'#FCF8FF', fontFamily:'Inter'}}>
     <Container>
-      <Box sx={{backgroundColor:'#F5F2FF',borderRadius:3,px:2,py:1.25,display:'flex',flexDirection:{xs:'column',md:'row'},alignItems:'center',justifyContent:'space-between',gap:{xs:1.5,md:1}}}>
+      <Box component={motion.div} sx={{backgroundColor:'#F5F2FF',borderRadius:3,px:2,py:1.25,display:'flex',flexDirection:{xs:'column',md:'row'},alignItems:'center',justifyContent:'space-between',gap:{xs:1.5,md:1}}}
+      initial={{y:-50}} animate={{y:0}} transition={{duration:5}}>
         <Box sx={{display:'flex',alignItems:'center',justifyContent:{xs:'space-between',md:'start'},gap:1}}>
           <Box sx={{display:'flex',alignItems:'center',gap:1}}>
         <CircleIcon sx={{fontSize:10,color:'#2E7D32'}}/>
@@ -43,7 +45,8 @@ function Register() {
         </Box>
       </Box>
       <Box sx={{display:'flex',gap:4}}>
-      <Box sx={{display:{lg:'block',xs:'none'},background:'linear-gradient(to bottom right,rgba(252, 105, 85, 1),rgba(63, 61, 158, 1),rgba(39, 35, 135, 1),rgba(94, 91, 168, 1),rgba(84, 82, 180, 1))',p:5,borderRadius:2,marginTop:3,boxShadow:3}}>
+      <Box component={motion.div} sx={{display:{lg:'block',xs:'none'},background:'linear-gradient(to bottom right,rgba(252, 105, 85, 1),rgba(63, 61, 158, 1),rgba(39, 35, 135, 1),rgba(94, 91, 168, 1),rgba(84, 82, 180, 1))',p:5,borderRadius:2,marginTop:3,boxShadow:3}}
+      initial={{opacity:0,x:-700}} animate={{opacity:100,x:0}} transition={{duration:3}}>
         <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:4}}>
         <Box sx={{display:'flex',alignItems:'center',gap:1.25}}>
           <Box sx={{backgroundColor:alpha('#FFFFFF',0.1),width:'fit-content',p:1,borderRadius:3,display:'flex',alignItems:'center',justifyContent:'center'}}>
@@ -59,8 +62,9 @@ function Register() {
           <Typography component='h2' variant='h2' sx={{color:'white',fontSize:40,fontWeight:700,fontFamily:'Outfit',margin:1.5,lineHeight:1.5,letterSpacing:0.6,marginLeft:0}}>Curated living,<br/>amplified by<br/> precision.</Typography>
           <Typography component='p' variant='p' sx={{color:alpha('#FFFFFF',0.8),fontSize:15,fontFamily:'Inter',lineHeight:1.5}}>Enter the ecosystem connecting high-end industrial<br/>tech, intelligent lifestyle appliances, and bespoke<br/>sound stages.</Typography>
         </Box>
-        <Box sx={{marginBottom:8.5}}>
-          <Box sx={{backgroundColor:alpha('#FFFFFF',0.1),borderRadius:1.5,p:1.5,display:'flex',alignItems:'center',gap:1.7}}>
+        <Box sx={{marginBottom:8.5}} component={motion.div} initial={{x:-500}} animate={{x:0}} transition={{duration:2.5,delay:2}}>
+          <Box component={motion.div} sx={{backgroundColor:alpha('#FFFFFF',0.1),borderRadius:1.5,p:1.5,display:'flex',alignItems:'center',gap:1.7}}
+          whileHover={{backgroundColor:alpha('#FFFFFF',0.3)}} transition={{duration:0.5}}>
             <Box sx={{backgroundColor:alpha('#FFFFFF',0.2),borderRadius:1,width:32,height:32,display:'flex',alignItems:'center',justifyContent:'center'}}>
             <StarsIcon sx={{color:'white',fontSize:15}}/>
             </Box>
@@ -69,7 +73,8 @@ function Register() {
               <Typography component="p" sx={{fontFamily:'Inter',fontSize:13,color:alpha("#FFFFFF",0.75),letterSpacing:0.13,lineHeight:1.5}}>Tiered loyalty rebates, concierge setup, and<br/>private concierge line</Typography>
             </Box>
           </Box>
-          <Box sx={{backgroundColor:alpha('#FFFFFF',0.1),borderRadius:1.5,p:1.5,display:'flex',alignItems:'center',gap:1.7,marginTop:1.5,marginBottom:1.5}}>
+          <Box component={motion.div} sx={{backgroundColor:alpha('#FFFFFF',0.1),borderRadius:1.5,p:1.5,display:'flex',alignItems:'center',gap:1.7,marginTop:1.5,marginBottom:1.5}}
+          whileHover={{backgroundColor:alpha('#FFFFFF',0.3)}} transition={{duration:0.5}}>
             <Box sx={{backgroundColor:alpha('#FFFFFF',0.2),borderRadius:1,width:32,height:32,display:'flex',alignItems:'center',justifyContent:'center'}}>
             <AccessTimeIcon sx={{color:'white',fontSize:15}}/>
             </Box>
@@ -78,7 +83,8 @@ function Register() {
               <Typography component="p" sx={{fontFamily:'Inter',fontSize:13,color:alpha("#FFFFFF",0.75),letterSpacing:0.13,lineHeight:1.5}}>24-hour reserved head start on limited edition<br/>product runs</Typography>
             </Box>
           </Box>
-          <Box sx={{backgroundColor:alpha('#FFFFFF',0.1),borderRadius:1.5,p:1.5,display:'flex',alignItems:'center',gap:1.7}}>
+          <Box component={motion.div} sx={{backgroundColor:alpha('#FFFFFF',0.1),borderRadius:1.5,p:1.5,display:'flex',alignItems:'center',gap:1.7}}
+          whileHover={{backgroundColor:alpha('#FFFFFF',0.3)}} transition={{duration:0.5}}>
             <Box sx={{backgroundColor:alpha('#FFFFFF',0.2),borderRadius:1,width:32,height:32,display:'flex',alignItems:'center',justifyContent:'center'}}>
             <BoltOutlinedIcon sx={{color:'white',fontSize:15}}/>
             </Box>
@@ -88,7 +94,8 @@ function Register() {
             </Box>
           </Box>
         </Box>
-        <Box sx={{backgroundColor:alpha("#FFFFFF",0.1),p:2,borderRadius:1.5,display:'flex',alignItems:'center',gap:2,marginBottom:2}}>
+        <Box component={motion.div} sx={{backgroundColor:alpha("#FFFFFF",0.1),p:2,borderRadius:1.5,display:'flex',alignItems:'center',gap:2,marginBottom:2}}
+        whileHover={{backgroundColor:alpha('#FFFFFF',0.3)}} transition={{duration:0.5}}>
           <img src={RegisterDecore} alt='Decore'/>
           <Box>
             <Box sx={{color:'#FC6955',display:'flex',alignItems:'center',gap:0.5,marginBottom:0.5}}>
@@ -108,7 +115,8 @@ function Register() {
           <Typography component="p" sx={{color:alpha("#FFFFFF",0.75),letterSpacing:0.33,lineHeight:1.4,fontWeight:500,fontSize:11,fontFamily:'Inter'}}>Refined Living System</Typography>
         </Box>
       </Box>
-        <Box sx={{width:{lg:'60%',xs:'100%'},marginTop:3}}>
+        <Box sx={{width:{lg:'60%',xs:'100%'},marginTop:3}} component={motion.div}
+        initial={{y:300,rotateZ:5}} animate={{y:0,rotateZ:0}} transition={{duration:3}}>
         <Box sx={{backgroundColor:alpha('#FFFFFF',0.2),boxShadow:3,py:5,px:{xs:2,sm:5},borderRadius:2}}>
           <Box sx={{marginBottom:3}}>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
@@ -119,11 +127,13 @@ function Register() {
             <Typography component="p" sx={{fontSize:15,fontFamily:'Inter',letterSpacing:0.7,color:"#6E6D7A"}}>Join over 250,000+ smart shoppers worldwide.</Typography>
           </Box>
           <Box sx={{display:'flex',alignItems:'center',gap:1.5,marginBottom:3,flexWrap:{xs:'wrap',sm:'nowrap'}}}>
-           <Button sx={{width:{sm:'50%',xs:'100%'},backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:3,boxShadow:1}}>
+           <Button component={motion.button} sx={{width:{sm:'50%',xs:'100%'},backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:3,boxShadow:1}}
+            whileHover={{y:-2,backgroundColor:'gold'}}transition={{ duration: 0.5 ,color:'white'}}>
             <img src={Google} alt='google'/>
             <Typography sx={{fontSize:14,fontFamily:'Inter',fontWeight:600,color:'#1A1A2B'}}>Continue with Google</Typography>
            </Button> 
-           <Button sx={{width:{sm:'50%',xs:'100%'},backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:3,boxShadow:1}}>
+           <Button component={motion.button} sx={{width:{sm:'50%',xs:'100%'},backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:3,boxShadow:1}}
+           whileHover={{y:-2,backgroundColor:'gold'}}transition={{ duration: 0.5 ,color:'white'}}>
             <img src={Apple} alt='Apple'/>
             <Typography sx={{fontSize:14,fontFamily:'Inter',fontWeight:600,color:'#1A1A2B',}}>Continue with Apple</Typography>
            </Button> 
