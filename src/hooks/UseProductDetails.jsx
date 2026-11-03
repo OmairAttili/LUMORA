@@ -8,7 +8,7 @@ export default function useProductDetails (id){
                 'Accept-Language' : 'en'
             }}
         );
-         return response;
+         return response.data.response;
     }
     return useQuery({
         queryKey:["products",id],
