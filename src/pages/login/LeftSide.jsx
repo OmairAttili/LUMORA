@@ -7,7 +7,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import comma from '../../assets/images/Comma.svg';
 
 export default function LeftSide() {
-  return <Box sx={{width:'50%',fontFamily:'Inter',background:'linear-gradient(to bottom right,rgba(39, 35, 135, 1),rgba(63, 61, 158, 1),rgba(94, 91, 168, 1))',p:5,borderRadius:2,boxShadow:3}}>
+  return <Box sx={{width:'100%',fontFamily:'Inter',background:'linear-gradient(to bottom right,rgba(39, 35, 135, 1),rgba(63, 61, 158, 1),rgba(94, 91, 168, 1))',p:5,borderRadius:2,boxShadow:3}}>
     <Container>
         <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
             <Box sx={{display:'flex',alignItems:'center',gap:1.5}}>

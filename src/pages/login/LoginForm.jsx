@@ -46,10 +46,7 @@ export default function LoginForm() {
               </Box>
             </Box>
             <Box sx={{marginBottom:2}}>
-              <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
             <Typography variant='h2' sx={{fontFamily:'Inter',fontSize:12,fontWeight:600,lineHeight:2,letterSpacing:0.24,marginBottom:0.75}}>Password</Typography>
-            <Typography variant='p'sx={{color:'#6E6D7A',fontSize:11,fontWeight:500,letterSpacing:0.33}}>Minimum 8 characters</Typography>
-              </Box>
             <OutlinedInput fullWidth type='password' sx={{px:1.5,backgroundColor:"#F7F8FC"}}error={errors.password} placeholder='Enter your password' {...register('password')} startAdornment={
              <InputAdornment position="start">
              <LockOutlinedIcon sx={{ color: '#6E6D7A'}} />
@@ -60,8 +57,8 @@ export default function LoginForm() {
            :null
           }
             </Box>
-            <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',textAlign:'center'}}>
-            <Box sx={{display:'flex',alignItems:'center',gap:1.25,marginBottom:2}}>
+            <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:2.5}}>
+            <Box sx={{display:'flex',alignItems:'center',gap:1.25}}>
               <Checkbox defaultChecked={false} size="small" color='#767676'/>
               <Typography variant='p'component={"p"} sx={{color:'#464552',fontSize:13,letterSpacing:0.13}}>Remember this device for 30 days</Typography>
             </Box>
