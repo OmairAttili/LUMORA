@@ -12,3 +12,12 @@
     phoneNumber:yup.string().required('Phone Number is required').matches(/^05\d{8}$/,"phone number must be have a numbers"),
   })
   export default registerSchema
+  
+   export const LoginSchema = yup.object({
+      email:yup.string().required('Email is required').email("Invalid email format"),
+      password:yup.string().required('Password is required')
+      .matches(/[A-Z]/,"Password must be contain a capital letter")
+      .matches(/[a-z]/,"Password must be contain a small letter")
+      .matches(/[0-9]/,"Password must be contain a number")
+      .min(8,"password must be at least 8 char"),
+    })

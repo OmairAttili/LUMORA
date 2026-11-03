@@ -4,9 +4,9 @@ import Apple from '../../assets/images/Apple.svg'
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import AutorenewIcon from '@mui/icons-material/Autorenew';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
-import Form from '../../components/form/Form'
 import { alpha, Box, Typography, Button, Divider } from '@mui/material';
 import { motion } from "motion/react"
+import Form from './RegisterForm';
 
 export default function RightSide() {
     return <Box sx={{ width: { lg: '60%', xs: '100%' }, marginTop: 3 }} component={motion.div}
