@@ -9,6 +9,7 @@ import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import LoginIcon from '@mui/icons-material/Login';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { Box, Typography,Button,InputAdornment, Checkbox,OutlinedInput ,Link, Alert } from '@mui/material';
+import { motion } from 'motion/react';
 
 export default function LoginForm() {
      const {register,handleSubmit,formState:{errors,isSubmitting}} = useForm({
@@ -62,16 +63,19 @@ export default function LoginForm() {
               <Checkbox defaultChecked={false} size="small" color='#767676'/>
               <Typography variant='p'component={"p"} sx={{color:'#464552',fontSize:13,letterSpacing:0.13}}>Remember this device for 30 days</Typography>
             </Box>
-            <Link href='SendCode' sx={{textDecoration:'none',color:'#FC6955',fontSize:12,fontWeight:600,letterSpacing:0.24}}>Forget password?</Link>
+            <Link component={motion.a} href='SendCode' sx={{textDecoration:'none',color:'#FC6955',fontSize:12,fontWeight:600,letterSpacing:0.24}}
+            whileHover={{rotate:10}}>Forget password?</Link>
             </Box>
-            <Button type='submit' variant="contained" disabled={isSubmitting} sx={{marginBottom:3,backgroundColor:'#272387',width:'100%',py:1.75,px:3,borderRadius:4,fontSize:16,fontWeight:700,color:'white'}}>
+            <Button component={motion.div} type='submit' variant="contained" disabled={isSubmitting} sx={{marginBottom:3,backgroundColor:'#272387',width:'100%',py:1.75,px:3,borderRadius:4,fontSize:16,fontWeight:700,color:'white'}}
+              whileHover={{y:-2,backgroundColor:'#403BA5',boxShadow:'0px 6px 15px rgba(39,35,135,0.25)'}} whileTap={{ scale: 0.97 }} transition={{ duration: 0.2 }}>
               <Box sx={{display:'flex',alignItems:'center',gap:1}}>
               <Typography component={'h2'} sx={{textTransform:'capitalize'}}>Sign In to LUMORA</Typography>
               <LoginIcon sx={{size:12}}/>
               </Box></Button>
                 <Box sx={{display:'flex',alignItems:'center',justifyContent:'center',gap:1}}>
                   <Typography variant='p'component={'p'} sx={{color:'#6E6D7A',fontSize:13,letterSpacing:0.13}}>New to LUMORA?  </Typography>
-                  <Link href='Register' sx={{color:'#272387',fontSize:16,fontWeight:600,textDecoration:'none'}}>Create an account</Link>
+                  <Link component={motion.a} href='Register' sx={{color:'#272387',fontSize:16,fontWeight:600,textDecoration:'none'}}
+                  whileHover={{y:10}} transition={{duration:2}}>Create an account</Link>
                   <ArrowForwardOutlinedIcon sx={{width:13,height:20,color:'#272387'}}/>
               </Box>
           </Box>

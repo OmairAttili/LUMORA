@@ -5,9 +5,11 @@ import StarRateIcon from '@mui/icons-material/StarRate';
 import Login from '../../assets/images/Login.png'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import comma from '../../assets/images/Comma.svg';
+import { motion } from 'motion/react';
 
 export default function LeftSide() {
-  return <Box sx={{width:'100%',fontFamily:'Inter',background:'linear-gradient(to bottom right,rgba(39, 35, 135, 1),rgba(63, 61, 158, 1),rgba(94, 91, 168, 1))',p:5,borderRadius:2,boxShadow:3}}>
+  return <Box component={motion.div} sx={{width:'100%',fontFamily:'Inter',background:'linear-gradient(to bottom right,rgba(39, 35, 135, 1),rgba(63, 61, 158, 1),rgba(94, 91, 168, 1))',p:5,borderRadius:2,boxShadow:3}}
+  initial={{x:-700,opacity:0}} animate={{x:0,opacity:100}} transition={{duration:3}}>
     <Container>
         <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
             <Box sx={{display:'flex',alignItems:'center',gap:1.5}}>
@@ -27,7 +29,8 @@ export default function LeftSide() {
         </Box>
         <Box sx={{px:6,py:4,display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center'}}>
             <Box sx={{width:'100%',p:2.5,backgroundColor:alpha('#FFFFFF',0.1),borderRadius:2,display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',gap:2}}>
-                <Box sx={{backgroundImage:`url(${Login})`,height:224,width:'100%',borderRadius:1.5,position:'relative'}}>
+                <Box component={motion.div} sx={{backgroundImage:`url(${Login})`,height:224,width:'100%',borderRadius:1.5,position:'relative'}}
+                whileHover={{y:-6,scale:1.02,boxShadow:'0px 15px 30px rgba(0,0,0,0.2)'}} transition={{duration:0.3}}>
                     <Box sx={{position:'absolute',top:16,left:22,backgroundColor:'#FC6955',px:1.25,py:0.5,borderRadius:12,color:'white'}}>
                         <Typography sx={{fontWeight:600,fontSize:11,letterSpacing:0.33}}>Spatial Audio Mk.II</Typography>
                     </Box>
@@ -40,13 +43,15 @@ export default function LeftSide() {
                 <Typography component={'span'} sx={{color:'white',fontSize:16,fontWeight:600}}>LUMORA Horizon One</Typography>
                 <Typography component={'p'} sx={{color:'#C2C1FF',fontSize:13,fontWeight:500,letterSpacing:0.13}}>Adaptive Active Noise Cancellation</Typography>
             </Box>
-            <Box sx={{color:'white',width:36,height:36,backgroundColor:alpha('#FFFFFF',0.2),borderRadius:12,border:2,borderColor:alpha("#FFFFFF",0.1),display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <Box component={motion.div} sx={{color:'white',width:36,height:36,backgroundColor:alpha('#FFFFFF',0.2),borderRadius:12,border:2,borderColor:alpha("#FFFFFF",0.1),display:'flex',alignItems:'center',justifyContent:'center'}}
+            whileHover={{x: 5,rotate: -10,scale: 1.12, backgroundColor: '#FC6955'}} whileTap={{ scale: 0.9 }} transition={{ duration: 0.25 }}>
                 <ArrowForwardIcon sx={{width:20,height:20}}/>
             </Box>
         </Box>
             </Box>
         </Box>
-        <Box sx={{backgroundColor:alpha('#FFFFFF',0.1),border:2,borderColor:alpha('#FFFFFF',0.15),borderRadius:1.5,p:2.5,display:'flex',flexDirection:'column',justifyContent:'center',gap:1}}>
+        <Box component={motion.div} sx={{backgroundColor:alpha('#FFFFFF',0.1),border:2,borderColor:alpha('#FFFFFF',0.15),borderRadius:1.5,p:2.5,display:'flex',flexDirection:'column',justifyContent:'center',gap:1}}
+         whileHover={{ y:-4,backgroundColor:'rgba(255,255,255,0.16)',borderColor:'rgba(255,255,255,0.4)'}} transition={{ duration: 0.3 }}>
             <Box sx={{display:'flex',alignItems:'center',gap:1}}>
                 <Typography component={'img'} src={comma}></Typography>
                 <Typography component={'span'} sx={{color:'#E2DFFF',fontWeight:600,fontSize:12}}>VERIFIED COLLECTOR</Typography>

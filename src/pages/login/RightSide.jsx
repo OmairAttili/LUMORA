@@ -5,9 +5,11 @@ import Google from '../../assets/images/Google.png'
 import Apple from '../../assets/images/Apple.svg'
 import DevicesIcon from '@mui/icons-material/Devices';
 import LoginForm from './LoginForm';
+import { motion } from 'motion/react';
 
 export default function RightSide() {
-  return <Box sx={{width:'100%',backgroundColor:alpha('#FFFFFF',0.2),boxShadow:3,p:6,borderRadius:2}}>
+  return <Box component={motion.div} sx={{width:'100%',backgroundColor:alpha('#FFFFFF',0.2),boxShadow:3,p:6,borderRadius:2}}
+  initial={{y:-700,opacity:0}} animate={{y:0,opacity:100}} transition={{duration:3,delay:3}}>
           <Box sx={{marginBottom:4}}>
             <Box sx={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
               <Box sx={{display:'flex',alignItems:'center',gap:0.75,backgroundColor:'#E8E6FE',color:'#272387',px:1.25,py:0.5,borderRadius:1.5}}>
@@ -23,11 +25,13 @@ export default function RightSide() {
             <Typography component="p" sx={{fontSize:15,fontFamily:'Inter',letterSpacing:0.7,color:"#6E6D7A"}}>Enter your credentials to access your orders, wishlist, and exclusive rewards.</Typography>
           </Box>
           <Box sx={{display:'flex',alignItems:'center',gap:1.5,marginBottom:3,flexWrap:{xs:'wrap',sm:'nowrap'}}}>
-           <Button sx={{width:'100%',backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:1.5,boxShadow:1}}>
+           <Button component={motion.div} sx={{width:'100%',backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:1.5,boxShadow:1}}
+            whileHover={{y:-3,borderColor:'#272387',boxShadow:'0 5px 15px rgba(39,35,135,0.12)',backgroundColor:'gold',rotateZ:-5}}transition={{duration: 0.25}}>
             <img src={Google} alt='google'/>
             <Typography sx={{fontSize:14,fontFamily:'Inter',fontWeight:600,color:'#1A1A2B'}}>Continue with Google</Typography>
            </Button> 
-           <Button sx={{width:'100%',backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:1.5,boxShadow:1}}>
+           <Button component={motion.div} sx={{width:'100%',backgroundColor:'#F7F8FC',py:1.5,borderRadius:1.5,display:'flex',alignItems:'center',gap:1.5,boxShadow:1}}
+           whileHover={{y:-3,borderColor:'#272387',boxShadow:'0 5px 15px rgba(39,35,135,0.12)',backgroundColor:'gold',rotateZ:5}}transition={{duration: 0.25}}>
             <img src={Apple} alt='Apple'/>
             <Typography sx={{fontSize:14,fontFamily:'Inter',fontWeight:600,color:'#1A1A2B',}}>Continue with Apple</Typography>
            </Button> 
